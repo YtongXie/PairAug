@@ -333,25 +333,27 @@ save_dir = 'data/IntraAug/IntraAug_images/'
 os.makedirs(save_dir, exist_ok=True)
 
 start_index = -1
+times = 10   ### number of generated images for each report 
 
 while start_index < len(final_files):
     start_index += 1
     if start_index >= args.start_index:            
         try:
-            file_i = final_files[start_index]
-            txt_ori = open(os.path.join(text_path_ori, file_i[0:-14] + '.txt')).read()
-            txt_gpt = open(os.path.join(text_path_gpt, file_i)).read()
-            prompts = [txt_ori, txt_gpt]
+            for t in range(times):
+                file_i = final_files[start_index]
+                txt_ori = open(os.path.join(text_path_ori, file_i[0:-14] + '.txt')).read()
+                txt_gpt = open(os.path.join(text_path_gpt, file_i)).read()
+                prompts = [txt_ori, txt_gpt]
 
-            controller = AttentionRefine(prompts, NUM_DIFFUSION_STEPS,
-                                        cross_replace_steps=.5,
-                                        self_replace_steps=.2)
-            outputs, _ = run_and_display(prompts, controller, latent=None)
+                controller = AttentionRefine(prompts, NUM_DIFFUSION_STEPS,
+                                            cross_replace_steps=.5,
+                                            self_replace_steps=.2)
+                outputs, _ = run_and_display(prompts, controller, latent=None)
 
-            re_out = outputs[0]
-            p2p_out = outputs[1]
+                re_out = outputs[0]
+                p2p_out = outputs[1]
 
-            cv2.imwrite(os.path.join(save_dir, file_i[0:-4] + '_t' + str(0) + ".png"), p2p_out)
+                cv2.imwrite(os.path.join(save_dir, file_i[0:-4] + '_t' + str(t) + ".png"), p2p_out)
 
             print(start_index)
             if start_index > args.end_index:  # 10000:

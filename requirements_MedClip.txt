@@ -1,2 +1,2 @@
-pip install MedCLIP==0.0.3
-pip install transformers==4.24.0    ## Change it when using medclip
+MedCLIP==0.0.3
+transformers==4.24.0    ## Change it when using medclip

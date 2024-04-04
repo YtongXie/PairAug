@@ -356,7 +356,7 @@ while start_index < len(final_files):
                 cv2.imwrite(os.path.join(save_dir, file_i[0:-4] + '_t' + str(t) + ".png"), p2p_out)
 
             print(start_index)
-            if start_index > args.end_index:  # 10000:
+            if start_index > args.end_index: 
                 break
 
         except Exception as e:

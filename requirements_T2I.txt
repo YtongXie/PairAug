@@ -1,6 +1,6 @@
-pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
-pip install diffusers[torch]==0.16.0
-pip install transformers==4.39.1
-pip install ftfy
-pip install opencv-python
-pip install ipywidgets
+torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
+diffusers[torch]==0.16.0
+transformers==4.39.1
+ftfy
+opencv-python
+ipywidgets

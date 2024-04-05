@@ -44,8 +44,16 @@ pip install -r requirements_T2I.txt
 ```
 #### 2. InterAug generation 
 * Download pretrained RoentGen weights and put it under `pretrained/`. Need to contact authors of paper [RoentGen](https://arxiv.org/pdf/2211.12737.pdf) for download. 
-* Run `python InterAug_Step1.py --start_index 0 --end_index 2200000` to generate new patient reports via ChatGPT, and save them in `data/InterAug/InterAug_reports`.
-* Run `python InterAug_Step2_T2I.py --start_index 0 --end_index 2200000` to generate inter-patient images via RoentGen model, and save them in `data/InterAug/InterAug_images`.
+* Run
+```
+  python InterAug_Step1.py --start_index 0 --end_index 2200000
+```
+It aims to generate new patient reports via ChatGPT, and save them in `data/InterAug/InterAug_reports`.
+* Run
+```
+  python InterAug_Step2_T2I.py --start_index 0 --end_index 2200000
+```
+It aims to generate inter-patient images via RoentGen model, and save them in `data/InterAug/InterAug_images`.
 
 #### 3. IntraAug generation 
 * Run `python IntraAug_Step1.py --start_index 0 --end_index 2200000` to generate intra-patient reports via ChatGPT, and save them in `data/IntraAug/IntraAug_reports`.
@@ -70,8 +78,9 @@ python IntraAug_Step3_fliter.py
 ```
 It introduces a hybrid consistency score between generated IntraAug image-report pairs to ensure the quality of the generated pairs.
 
+
 ### Acknowledgements
-Thanks to [diffusers](https://github.com/huggingface/diffusers), [prompt-to-prompt](https://github.com/google/prompt-to-prompt/) and [RoentGen](https://arxiv.org/pdf/2211.12737.pdf) and for the latent diffusion model, prompt-to-prompt stable diffusion model and pretrained weights.
+Thanks to [diffusers](https://github.com/huggingface/diffusers) for the latent diffusion model, [prompt-to-prompt](https://github.com/google/prompt-to-prompt/) for prompt-to-prompt stable diffusion model, [RoentGen](https://arxiv.org/pdf/2211.12737.pdf) for pretrained weights, [CheXzero](https://github.com/rajpurkarlab/CheXzero) for medical visual-language pre-training.
 
 ### Contact
 Yutong Xie (yutong.xie678@gmail.com)

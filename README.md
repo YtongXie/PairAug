@@ -35,7 +35,7 @@ pip install -r requirements_T2I.txt
     ├── p19_p19996061_s58482960_87923de8-5595ad44-eaa89d38-610e97e2-42cacf04.png
     ├── ...
 ```
-* Run `python data/reports_jsonl.py` to generate the report data lists `data/metadata_snets.jsonl`.
+* Run `python data/reports_jsonl.py` to generate the report data lists `data/metadata_train.jsonl`.
 * Put the report data under `data/MIMIC_reports_ori/` should be like:
 ``` data/MIMIC_reports_ori/
     ├── p19_p19995997_s50123635_6fa953ea-79c237a5-4ca3be78-e3ae6427-c327e17b.txt

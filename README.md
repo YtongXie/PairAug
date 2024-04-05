@@ -56,8 +56,16 @@ It aims to generate new patient reports via ChatGPT, and save them in `data/Inte
 It aims to generate inter-patient images via RoentGen model, and save them in `data/InterAug/InterAug_images`.
 
 #### 3. IntraAug generation 
-* Run `python IntraAug_Step1.py --start_index 0 --end_index 2200000` to generate intra-patient reports via ChatGPT, and save them in `data/IntraAug/IntraAug_reports`.
-* Run `python IntraAug_Step2_T2I.py --start_index 0 --end_index 2200000` to generate intra-patient images based on generated and original reports, and save them in `data/IntraAug/IntraAug_images`.
+* Run
+```
+python IntraAug_Step1.py --start_index 0 --end_index 2200000
+```
+It aims to generate intra-patient reports via ChatGPT, and save them in `data/IntraAug/IntraAug_reports`.
+* Run
+```
+python IntraAug_Step2_T2I.py --start_index 0 --end_index 2200000
+```
+It aims to generate intra-patient images based on generated and original reports, and save them in `data/IntraAug/IntraAug_images`.
 
 ### Data Pruning
 #### 0. Installation 

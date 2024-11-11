@@ -10,6 +10,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 split = 'train'
 MIMIC_CXR_DATA_DIR = '2019.MIMIC-CXR-JPG/2.0.0'     ### Original MIMIC-CXR-JPG data folder
 MIMIC_CXR_MASTER_CSV = os.path.join(MIMIC_CXR_DATA_DIR, "master.csv")
+#### The ‘master.csv’ can be downloaded from this link: https://drive.google.com/file/d/1-ZW_BsoPH1bzsNo-EelJIhgm6Wk6jaFq/view?usp=sharing
 MIMIC_CXR_VIEW_COL = "ViewPosition"
 MIMIC_CXR_PATH_COL = "Path"
 MIMIC_CXR_SPLIT_COL = "split"
